@@ -1,0 +1,254 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    --pink: #e94f9b;
+    --pink-dark: #c72d7b;
+    --pink-light: #fff0f7;
+    --pink-soft: #ffe0ef;
+    --text: #392536;
+    --muted: #806b7c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at top left, #ffe0ef 0, transparent 40%),
+        linear-gradient(135deg, #fff8fc, #fff0f7 55%, #fce8f4);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid #f8d5e7;
+    box-shadow: 0 5px 25px rgba(192, 54, 123, 0.08);
+    padding: 16px 0;
+}
+
+.navbar-brand {
+    color: var(--pink-dark) !important;
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    color: #765568 !important;
+    font-weight: 600;
+    margin-left: 12px;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--pink) !important;
+}
+
+main.container {
+    min-height: 75vh;
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+
+.hero-card {
+    position: relative;
+    overflow: hidden;
+    padding: 55px 45px;
+    border: 1px solid #f8d4e7;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ffffff 20%, #ffe5f2);
+    box-shadow: 0 20px 55px rgba(191, 54, 124, 0.12);
+}
+
+.hero-card::after {
+    content: "♡";
+    position: absolute;
+    right: 30px;
+    bottom: -75px;
+    color: rgba(233, 79, 155, 0.12);
+    font-size: 240px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.pink-label {
+    display: inline-block;
+    padding: 9px 15px;
+    border-radius: 50px;
+    background: var(--pink-soft);
+    color: var(--pink-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.hero-title {
+    margin: 22px 0 15px;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+}
+
+.pink-text {
+    color: var(--pink);
+}
+
+.hero-description {
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.btn-pink {
+    padding: 13px 24px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f46caf, #d93688);
+    box-shadow: 0 8px 20px rgba(217, 54, 136, 0.22);
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.btn-pink:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #e94f9b, #bc286f);
+    color: #fff;
+}
+
+.btn-pink:focus-visible {
+    outline: 3px solid #f8b5d7;
+    outline-offset: 3px;
+}
+
+.feature-card {
+    height: 100%;
+    padding: 25px;
+    border: 1px solid #f8d7e8;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 28px rgba(192, 54, 123, 0.06);
+}
+
+.feature-icon {
+    display: grid;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 17px;
+    place-items: center;
+    border-radius: 17px;
+    background: var(--pink-light);
+    font-size: 1.7rem;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.feature-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.form-card {
+    overflow: hidden;
+    border: 1px solid #f5cfe2;
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 18px 50px rgba(192, 54, 123, 0.12);
+}
+
+.form-card-header {
+    padding: 27px 30px;
+    background: linear-gradient(120deg, #f9c4df, #ffeaf4);
+}
+
+.form-card-body {
+    padding: 30px;
+}
+
+.form-label {
+    margin-bottom: 9px;
+    color: #5a3c50;
+    font-weight: 700;
+}
+
+.form-control,
+.form-select {
+    min-height: 48px;
+    border: 1px solid #eed6e3;
+    border-radius: 12px;
+    background-color: #fffafd;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 4px rgba(233, 79, 155, 0.12);
+    background-color: #fff;
+}
+
+#availability {
+    border: 1px solid #f3c8df;
+    border-radius: 14px;
+    background: #fff3f9;
+    color: #87456b;
+    line-height: 1.7;
+}
+
+.alert-success {
+    border-color: #f2c9de;
+    border-radius: 13px;
+    background: #fff0f7;
+    color: #96366b;
+}
+
+.alert-danger {
+    border-radius: 13px;
+}
+
+.site-footer {
+    padding: 22px 15px;
+    border-top: 1px solid #f4d7e6;
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--muted);
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .hero-card {
+        padding: 35px 23px;
+        border-radius: 23px;
+    }
+
+    .hero-title {
+        letter-spacing: -0.7px;
+    }
+
+    .form-card-header,
+    .form-card-body {
+        padding: 22px;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
