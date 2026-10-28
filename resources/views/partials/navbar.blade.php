@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg sticky-top">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
             ♡ KursusKu
@@ -20,6 +20,18 @@
             <div class="navbar-nav ms-auto align-items-lg-center">
                 <a class="nav-link" href="{{ route('home') }}">
                     Beranda
+                </a>
+
+                <a class="nav-link" href="{{ route('home') }}#keunggulan">
+                    Keunggulan
+                </a>
+
+                <a class="nav-link" href="{{ route('home') }}#kursus">
+                    Kursus
+                </a>
+
+                <a class="nav-link" href="{{ route('home') }}#cara-daftar">
+                    Cara Daftar
                 </a>
 
                 <a class="nav-link" href="{{ route('enrollments.create') }}">
