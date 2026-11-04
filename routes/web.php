@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,10 @@ Route::post('/pendaftaran/preview', function (Request $request) {
         ->withInput();
 })->name('enrollments.preview');
 
+// CRUD kursus: daftar, formulir tambah, dan simpan
+Route::resource('courses', CourseController::class);
+
+// Cek ketersediaan kursus dari fitur sebelumnya
 Route::get('/courses/{course}/availability', function (int $course) {
     $availability = [
         1 => [
