@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Katalog Kursus - KursusKu')
+
 @section('content')
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -32,8 +34,10 @@
                         <th>Kuota</th>
                         <th>Tanggal Mulai</th>
                         <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     @forelse ($courses as $course)
                         <tr>
@@ -47,10 +51,36 @@
                                     {{ ucfirst($course->status) }}
                                 </span>
                             </td>
+
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <a href="{{ route('courses.show', $course) }}"
+                                       class="btn btn-sm btn-outline-primary">
+                                        Detail
+                                    </a>
+
+                                    <a href="{{ route('courses.edit', $course) }}"
+                                       class="btn btn-sm btn-outline-warning">
+                                        Edit
+                                    </a>
+
+                                    <form method="POST"
+                                          action="{{ route('courses.destroy', $course) }}"
+                                          onsubmit="return confirm('Apakah kamu yakin ingin menghapus kursus ini?')">
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-danger">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" class="text-center py-4 text-muted">
+                            <td colspan="7" class="text-center py-4 text-muted">
                                 Belum ada data kursus. Klik Tambah Kursus untuk memulai.
                             </td>
                         </tr>
