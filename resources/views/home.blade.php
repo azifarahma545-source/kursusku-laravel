@@ -3,6 +3,8 @@
 @section('title', 'Beranda - KursusKu')
 
 @section('content')
+
+{{-- HERO --}}
 <section class="hero-card mt-3">
     <div class="row align-items-center g-4">
         <div class="col-lg-7">
@@ -42,6 +44,52 @@
     </div>
 </section>
 
+{{-- DASHBOARD STATISTIK --}}
+<section class="py-4">
+    <div class="text-center mb-4">
+        <span class="pink-label">STATISTIK KURSUSKU</span>
+        <h2 class="fw-bold mt-3">Ringkasan Data</h2>
+        <p class="text-secondary">
+            Informasi jumlah kursus dan peserta yang terdaftar.
+        </p>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-md-3 col-6">
+            <div class="feature-card text-center">
+                <div class="feature-icon">📚</div>
+                <h3 class="h2 fw-bold">{{ $totalCourses }}</h3>
+                <p class="mb-0">Total Kursus</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="feature-card text-center">
+                <div class="feature-icon">🌸</div>
+                <h3 class="h2 fw-bold">{{ $openCourses }}</h3>
+                <p class="mb-0">Kursus Open</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="feature-card text-center">
+                <div class="feature-icon">👩‍🎓</div>
+                <h3 class="h2 fw-bold">{{ $totalParticipants }}</h3>
+                <p class="mb-0">Total Participant</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="feature-card text-center">
+                <div class="feature-icon">📝</div>
+                <h3 class="h2 fw-bold">{{ $totalEnrollments }}</h3>
+                <p class="mb-0">Total Enrollment</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- KEUNGGULAN --}}
 <section class="py-5" id="keunggulan">
     <div class="text-center mb-4">
         <span class="pink-label">KENAPA KURSUSKU?</span>
@@ -87,23 +135,34 @@
     </div>
 </section>
 
+{{-- KURSUS PILIHAN --}}
 <section class="py-5" id="kursus">
     <h2 class="h3 fw-bold text-center mb-4">Kursus Pilihan</h2>
+
     <div class="row g-4">
         @foreach ($featured as $course)
-        <div class="col-md-4">
-            <article class="card h-100 shadow-sm border-0">
-                <div class="card-body p-4">
-                    <small class="text-secondary">{{ $course['code'] }}</small>
-                    <h3 class="h5 fw-bold">{{ $course['name'] }}</h3>
-                    <p class="mb-0 text-secondary">{{ $course['description'] }}</p>
-                </div>
-            </article>
-        </div>
+            <div class="col-md-4">
+                <article class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <small class="text-secondary">
+                            {{ $course['code'] }}
+                        </small>
+
+                        <h3 class="h5 fw-bold">
+                            {{ $course['name'] }}
+                        </h3>
+
+                        <p class="mb-0 text-secondary">
+                            {{ $course['description'] }}
+                        </p>
+                    </div>
+                </article>
+            </div>
         @endforeach
     </div>
 </section>
 
+{{-- CARA DAFTAR --}}
 <section class="py-5" id="cara-daftar">
     <div class="text-center mb-4">
         <span class="pink-label">CARA DAFTAR</span>
@@ -115,7 +174,9 @@
             <div class="feature-card">
                 <div class="feature-icon">1️⃣</div>
                 <h3>Pilih Kursus</h3>
-                <p>Buka halaman Pendaftaran, lalu pilih kursus yang kamu minati.</p>
+                <p>
+                    Buka halaman Pendaftaran, lalu pilih kursus yang kamu minati.
+                </p>
             </div>
         </div>
 
@@ -123,7 +184,9 @@
             <div class="feature-card">
                 <div class="feature-icon">2️⃣</div>
                 <h3>Cek Kursi</h3>
-                <p>Sisa kursi tampil otomatis tanpa reload halaman.</p>
+                <p>
+                    Sisa kursi tampil otomatis tanpa reload halaman.
+                </p>
             </div>
         </div>
 
@@ -131,9 +194,12 @@
             <div class="feature-card">
                 <div class="feature-icon">3️⃣</div>
                 <h3>Isi Formulir</h3>
-                <p>Isi nama dan email, lalu klik Kirim Pendaftaran.</p>
+                <p>
+                    Isi nama dan email, lalu klik Kirim Pendaftaran.
+                </p>
             </div>
         </div>
     </div>
 </section>
+
 @endsection

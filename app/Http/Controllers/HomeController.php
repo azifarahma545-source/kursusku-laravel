@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Enrollment;
+use App\Models\Participant;
+
 class HomeController extends Controller
 {
     public function index()
     {
         $siteName = 'KursusKu';
+
+        $totalCourses = Course::count();
+        $openCourses = Course::where('status', 'open')->count();
+        $totalParticipants = Participant::count();
+        $totalEnrollments = Enrollment::count();
 
         $featured = [
             [
@@ -36,6 +45,13 @@ class HomeController extends Controller
             ],
         ];
 
-        return view('home', compact('siteName', 'featured'));
+        return view('home', compact(
+            'siteName',
+            'featured',
+            'totalCourses',
+            'openCourses',
+            'totalParticipants',
+            'totalEnrollments'
+        ));
     }
 }
